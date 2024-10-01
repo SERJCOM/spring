@@ -1,4 +1,4 @@
-package com.serj_comp.database;
+package com.serj_comp.user;
 
 
 import jakarta.persistence.Entity;

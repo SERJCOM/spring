@@ -1,14 +1,15 @@
-package com.serj_comp.service;
+package com.serj_comp.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.google.common.base.Charsets;
 import com.google.common.hash.Hashing;
-import com.serj_comp.database.User;
-import com.serj_comp.database.UserRepository;
-import com.serj_comp.events.EventBase;
-import com.serj_comp.events.EventPublisher;
+import com.serj_comp.event_service.EventBase;
+import com.serj_comp.event_service.EventPublisher;
+import com.serj_comp.events.AuthFactory;
+import com.serj_comp.service.InnerUserService;
+
 import java.util.ArrayList;
 
 @Service
@@ -22,7 +23,7 @@ public class UserService {
 
     public InnerUserService createUser(User user) {
 
-        eventpublisher.createNewEvent(new EventBase(user.getName()));
+        eventpublisher.createNewEvent(new AuthFactory().CreateAuthEvent(user.getName(), "228 1488 6996", true));
 
         User _user = repo.findByName(user.getName());
         if (_user == null) {

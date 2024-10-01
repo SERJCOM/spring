@@ -1,11 +1,8 @@
-package com.serj_comp.events;
+package com.serj_comp.event_service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
-
-import com.serj_comp.database.Event;
-import com.serj_comp.database.EventRepository;
 
 import java.util.ArrayList;
 

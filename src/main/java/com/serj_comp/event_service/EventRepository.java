@@ -1,9 +1,8 @@
-package com.serj_comp.database;
+package com.serj_comp.event_service;
 
 import java.util.ArrayList;
 
 import org.springframework.data.repository.CrudRepository;
-import com.serj_comp.database.Event;
 
 
 public interface EventRepository extends CrudRepository<Event, Long> {

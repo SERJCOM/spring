@@ -1,8 +1,7 @@
 package com.serj_comp;
 
-// import com.serj_comp.events;
-import com.serj_comp.database.User;
-import com.serj_comp.events.EventService;
+import com.serj_comp.event_service.Event;
+import com.serj_comp.event_service.EventService;
 
 import java.util.ArrayList;
 
@@ -12,9 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.serj_comp.service.InnerUserService;
-import com.serj_comp.service.UserService;
-
-import com.serj_comp.database.Event;
+import com.serj_comp.user.User;
+import com.serj_comp.user.UserService;
 
 
 @RestController
@@ -35,12 +33,13 @@ public class Components {
 
 	@GetMapping("/event")
 	public String getEvents(@RequestParam(value = "name") String name) {
-		String string = "";
+		// String string = "";
 		ArrayList<Event> events = eventservice.getEvents(name);
-		for(int i = 0; i < events.size(); i++){
-			string = string.concat(" ").concat(events.get(i).getName());
-		}
+		return events.get(0).getData();
+		// for(int i = 0; i < events.size(); i++){
+		// 	string = string.concat(" ").concat(events.get(i).getData());
+		// }
 
-		return string;
+		// return string;
 	}
 }
