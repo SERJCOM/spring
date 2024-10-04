@@ -4,6 +4,8 @@ import java.time.LocalDateTime;
 
 import lombok.Data;
 
+import java.util.Date;
+
 @Data
 public class EventBase {
     protected String name;
@@ -14,6 +16,6 @@ public class EventBase {
 
     protected String typeevent;
 
-
+    private Date createdAt;
 
 }

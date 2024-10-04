@@ -6,6 +6,8 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 
+import java.util.Date;
+
 @Component
 public class EventService implements ApplicationListener<EventApplication> {
     @Autowired
@@ -19,5 +21,9 @@ public class EventService implements ApplicationListener<EventApplication> {
 
     public ArrayList<Event> getEvents(String name){
         return eventRepo.findAllByName(name);
+    }
+
+    public ArrayList<Event> getEventsFromDate(String name, Date startFrom){
+        return eventRepo.findAllUsersByDate(name, startFrom);
     }
 }

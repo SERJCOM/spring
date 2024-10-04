@@ -1,5 +1,7 @@
 package com.serj_comp.events;
 
+import java.util.Date;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.serj_comp.event_service.EventBase;
 
@@ -32,6 +34,7 @@ public class AuthFactory {
     public EventBase CreateAuthEvent(String name, String token, Boolean success) {
         AuthEvent event = new AuthEvent();
         event.setName(name);
+        event.setCreatedAt(new Date());
         event.CreateAuthEvent(token, success);
         return event;
 
